@@ -1,6 +1,4 @@
 <Solution>
   <Project Path="CoreTest/CoreTest.csproj" Id="08ac01ac-a377-4277-a4c6-b0cc5f1bd145" />
   <Project Path="VolleyPool.ConsoleApp/VolleyPool.ConsoleApp.csproj" />
-  <Project Path="VolleyPool.Core/VolleyPool.Core.csproj" />
-  <Project Path="VolleyPool.Data/VolleyPool.Data.csproj" />
 </Solution>

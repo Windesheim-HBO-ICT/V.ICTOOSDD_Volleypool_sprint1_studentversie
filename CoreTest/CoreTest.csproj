@@ -24,9 +24,4 @@
     <Folder Include="Integration\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\VolleyPool.Core\VolleyPool.Core.csproj" />
-    <ProjectReference Include="..\VolleyPool.Data\VolleyPool.Data.csproj" />
-  </ItemGroup>
-
 </Project>
