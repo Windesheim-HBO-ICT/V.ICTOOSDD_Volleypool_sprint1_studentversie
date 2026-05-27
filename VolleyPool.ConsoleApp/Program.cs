@@ -25,7 +25,7 @@ var consolePrinter = new ConsolePrinter();
 ////////////////////////////////////////////////////////////////////////
 // Welcome message
 ////////////////////////////////////////////////////////////////////////
-Console.WriteLine("Welcome to VolleyPool, transport your child's team like a rocket");
+Console.WriteLine("Welkom bij Volleypool, vervoer je kind's team als een raket");
 
 ////////////////////////////////////////////////////////////////////////
 // Runner loop
@@ -37,10 +37,10 @@ while (!quit)
 
     if(authService.LoggedInParent != null)
     {
-        consolePrinter.PrintMessage("Logged in: " + authService.LoggedInParent.Name);
+        consolePrinter.PrintMessage("Ingelogd: " + authService.LoggedInParent.Name);
     } else
     {
-        consolePrinter.PrintMessage("Not signed in");
+        consolePrinter.PrintMessage("Niet ingelogd");
     }
 
     var menuChoice = ShowMenu(); // Method call. Use Ctrl + Left Click to view implementation details.
@@ -74,15 +74,15 @@ while (!quit)
 ////////////////////////////////////////////////////////////////////////
 string ShowMenu()
 { 
-    Console.WriteLine("What do you want to do?");
-    Console.WriteLine("Enter 1 to register");
-    Console.WriteLine("Enter 2 to quit");
+    Console.WriteLine("Wat wil je doen?");
+    Console.WriteLine("Voer 1 in om te registreren");
+    Console.WriteLine("Voer 2 in om te stoppen");
 
     var menuChoice = Console.ReadLine();
 
     if(menuChoice == "" || menuChoice == null)
     {
-        consolePrinter.PrintError("No valid choice has been made, we're leaving you. Bye.");
+        consolePrinter.PrintError("Geen geldige keuze gemaakt, we verlaten je. Tot ziens.");
         Console.ReadKey();
         System.Environment.Exit(0);
     }
@@ -95,7 +95,7 @@ string ShowMenu()
 ////////////////////////////////////////////////////////////////////////
 void StopApplication(string menuChoice)
 {
-    Console.WriteLine("Bye bye.");
+    Console.WriteLine("Tot ziens.");
     Thread.Sleep(2000); // Wait 2000 milliseconds (2 sec.) for exiting
     System.Environment.Exit(0);
 }
@@ -106,7 +106,7 @@ void StopApplication(string menuChoice)
 ////////////////////////////////////////////////////////////////////////
 void ShowRegister() {
 
-    consolePrinter.PrintBlock("Register parent"); // Use Ctrl + Left Click to view implementation details.
+    consolePrinter.PrintBlock("Registreer ouder"); // Use Ctrl + Left Click to view implementation details.
 
     // For the sake of simplicity this is a linear flow. What a pity if
     // it fails, the program exits and the user should start the whole
@@ -118,17 +118,17 @@ void ShowRegister() {
     // This code contains a lot of duplicated code. This could be improved
     // by creating a helper like this:
     // CollectUserInput("Enter player id"). It returns the collected value.
-    Console.WriteLine("Enter player id");
+    Console.WriteLine("Voer speler ID in");
     var playerId = Console.ReadLine();
-    Console.WriteLine("Enter player birthdate. You should know that date!. Example 21-1-2000");
+    Console.WriteLine("Voer de geboortedatum van de speler in. Je zou die datum moeten weten!. Voorbeeld 21-1-2000");
     var playerBirthDateString = Console.ReadLine();
-    Console.WriteLine("Enter your name");
+    Console.WriteLine("Voer je naam in");
     var name = Console.ReadLine();
-    Console.WriteLine("Enter your email");
+    Console.WriteLine("Voer je e-mailadres in");
     var email = Console.ReadLine();
-    Console.WriteLine("Enter your phone number");
+    Console.WriteLine("Voer je telefoonnummer in");
     var phone = Console.ReadLine();
-    Console.WriteLine("Enter password for your account");
+    Console.WriteLine("Voer een wachtwoord in voor je account");
     var password = Console.ReadLine();
 
     // playerIdInt
@@ -147,11 +147,11 @@ void ShowRegister() {
     var authResult = authService.Register(playerIdInt, playerBirthDate, name, email, phone, password); // For the sake of simplicity no null check has been made. This is bad practice!
     if (authResult != null)
     {
-        consolePrinter.PrintSuccess("Registration completed");
+        consolePrinter.PrintSuccess("Registratie voltooid");
     }
     else
     {
-        consolePrinter.PrintError("Something went wrong.");
+        consolePrinter.PrintError("Er is iets misgegaan.");
     }
 }
 
